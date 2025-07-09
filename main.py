@@ -15,6 +15,10 @@ def fyers_webhook():
     print("Received Trade Signal:", data)
     return jsonify({"status": "success"}), 200
 
+@app.route('/ping', methods=['GET'])
+def ping():
+    return "Bot Running ✅"
+
 def verify_signature(payload, signature_header):
     expected_signature = 'sha256=' + hmac.new(
         WEBHOOK_SECRET.encode(),
@@ -25,3 +29,4 @@ def verify_signature(payload, signature_header):
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
+
