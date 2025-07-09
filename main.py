@@ -26,4 +26,4 @@ def verify_signature(payload, signature_header):
     return hmac.compare_digest(expected_signature, signature_header)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='0.0.0.0', port=5000)
