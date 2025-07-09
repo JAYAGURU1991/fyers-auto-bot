@@ -27,4 +27,4 @@ def verify_signature(payload, signature_header):
     ).hexdigest()
     return hmac.compare_digest(expected_signature, signature_header)
 
-# No app.run() — Gunicorn will handle this in production
+# Note: No app.run() — gunicorn will start the server in production
