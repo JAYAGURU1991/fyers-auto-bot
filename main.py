@@ -2,7 +2,6 @@ from flask import Flask, request, jsonify
 import hmac, hashlib
 
 app = Flask(__name__)
-
 WEBHOOK_SECRET = "jayguru123"
 
 @app.route('/fyers-webhook', methods=['POST'])
